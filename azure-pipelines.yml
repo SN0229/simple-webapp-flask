@@ -30,11 +30,12 @@ steps:
     pip install -r requirements.txt
   displayName: 'Install dependencies'
 
- task: CopyFiles@2
+  task: CopyFiles@2
   inputs:
     sourceFolder: '$(Build.SourcesDirectory)'
     contents: '**'
     targetFolder: '$(Build.ArtifactStagingDirectory)'
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
